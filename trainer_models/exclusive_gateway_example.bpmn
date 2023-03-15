@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_08328xc" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.8.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_08328xc" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.8.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
   <bpmn:collaboration id="Collaboration_1fqffmw">
     <bpmn:participant id="Participant_1mqv2qb" name="Documentation procesing" processRef="Docuemntation_Process" />
   </bpmn:collaboration>
@@ -7,29 +7,27 @@
     <bpmn:laneSet id="LaneSet_0hgb1wo">
       <bpmn:lane id="Lane_0jdrvjx" name="User">
         <bpmn:flowNodeRef>Event_1c5mm6k</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1w1cs7f</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_0elnwl1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>PR_DOCUM_UT_UPLOAD_DOC</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_0yzsdid</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_0oux66i</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_0jnxiul</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0elnwl1</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1jkvrql</bpmn:flowNodeRef>
         <bpmn:childLaneSet id="LaneSet_19uyoyx">
           <bpmn:lane id="Lane_186q6qi">
             <bpmn:flowNodeRef>Event_1c5mm6k</bpmn:flowNodeRef>
-            <bpmn:flowNodeRef>Activity_1w1cs7f</bpmn:flowNodeRef>
-            <bpmn:flowNodeRef>Activity_0elnwl1</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>PR_DOCUM_UT_UPLOAD_DOC</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Gateway_0yzsdid</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Gateway_0oux66i</bpmn:flowNodeRef>
-            <bpmn:flowNodeRef>Activity_0jnxiul</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>Activity_0elnwl1</bpmn:flowNodeRef>
             <bpmn:flowNodeRef>Event_1jkvrql</bpmn:flowNodeRef>
           </bpmn:lane>
         </bpmn:childLaneSet>
       </bpmn:lane>
       <bpmn:lane id="Lane_0xwtys3" name="System">
-        <bpmn:flowNodeRef>Activity_00i4c6q</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>PR_DOCU_PROC_ST_SAVE_DOC</bpmn:flowNodeRef>
         <bpmn:childLaneSet id="LaneSet_025rfyg">
           <bpmn:lane id="Lane_0wobdur">
-            <bpmn:flowNodeRef>Activity_00i4c6q</bpmn:flowNodeRef>
+            <bpmn:flowNodeRef>PR_DOCU_PROC_ST_SAVE_DOC</bpmn:flowNodeRef>
           </bpmn:lane>
         </bpmn:childLaneSet>
       </bpmn:lane>
@@ -37,13 +35,9 @@
     <bpmn:endEvent id="Event_1c5mm6k">
       <bpmn:incoming>Flow_0laz7yg</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:userTask id="Activity_1w1cs7f" name="Upload document">
+    <bpmn:userTask id="PR_DOCUM_UT_UPLOAD_DOC" name="Upload document" camunda:formRef="PR_DOC_UPLOAD_FORM1" camunda:formRefBinding="latest">
       <bpmn:incoming>Flow_0gntoyg</bpmn:incoming>
       <bpmn:outgoing>Flow_0xlsddl</bpmn:outgoing>
-    </bpmn:userTask>
-    <bpmn:userTask id="Activity_0elnwl1" name="Reupload file">
-      <bpmn:incoming>Flow_0yj9f8v</bpmn:incoming>
-      <bpmn:outgoing>Flow_1n0yj5v</bpmn:outgoing>
     </bpmn:userTask>
     <bpmn:exclusiveGateway id="Gateway_0yzsdid">
       <bpmn:incoming>Flow_1n0yj5v</bpmn:incoming>
@@ -56,24 +50,24 @@
       <bpmn:outgoing>Flow_0yj9f8v</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_0laz7yg" sourceRef="Gateway_0yzsdid" targetRef="Event_1c5mm6k" />
-    <bpmn:sequenceFlow id="Flow_0gntoyg" sourceRef="Event_1jkvrql" targetRef="Activity_1w1cs7f" />
-    <bpmn:sequenceFlow id="Flow_0xlsddl" sourceRef="Activity_1w1cs7f" targetRef="Gateway_0oux66i" />
-    <bpmn:sequenceFlow id="Flow_0z1bp62" name="Yes" sourceRef="Gateway_0oux66i" targetRef="Activity_00i4c6q" />
+    <bpmn:sequenceFlow id="Flow_0gntoyg" sourceRef="Event_1jkvrql" targetRef="PR_DOCUM_UT_UPLOAD_DOC" />
+    <bpmn:sequenceFlow id="Flow_0xlsddl" sourceRef="PR_DOCUM_UT_UPLOAD_DOC" targetRef="Gateway_0oux66i" />
+    <bpmn:sequenceFlow id="Flow_0z1bp62" name="Yes" sourceRef="Gateway_0oux66i" targetRef="PR_DOCU_PROC_ST_SAVE_DOC" />
     <bpmn:sequenceFlow id="Flow_0yj9f8v" name="No" sourceRef="Gateway_0oux66i" targetRef="Activity_0elnwl1">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${isDocumentValid==0}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1n0yj5v" sourceRef="Activity_0elnwl1" targetRef="Gateway_0yzsdid" />
-    <bpmn:sequenceFlow id="Flow_1ex9s0w" sourceRef="Activity_00i4c6q" targetRef="Gateway_0yzsdid" />
-    <bpmn:serviceTask id="Activity_00i4c6q" name="Save document and save logs to file" camunda:delegateExpression="123124">
+    <bpmn:sequenceFlow id="Flow_1ex9s0w" sourceRef="PR_DOCU_PROC_ST_SAVE_DOC" targetRef="Gateway_0yzsdid" />
+    <bpmn:serviceTask id="PR_DOCU_PROC_ST_SAVE_DOC" name="Save document and save logs to file" camunda:delegateExpression="123124">
       <bpmn:incoming>Flow_0z1bp62</bpmn:incoming>
       <bpmn:outgoing>Flow_1ex9s0w</bpmn:outgoing>
     </bpmn:serviceTask>
-    <bpmn:task id="Activity_0jnxiul" />
-    <bpmn:startEvent id="Event_1jkvrql">
+    <bpmn:userTask id="Activity_0elnwl1" name="Reupload file">
+      <bpmn:incoming>Flow_0yj9f8v</bpmn:incoming>
+      <bpmn:outgoing>Flow_1n0yj5v</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:startEvent id="Event_1jkvrql" camunda:formRef="PR_DOC_UPLOAD_FORM1" camunda:formRefBinding="latest">
       <bpmn:outgoing>Flow_0gntoyg</bpmn:outgoing>
-      <bpmn:timerEventDefinition id="TimerEventDefinition_1ilfgsw">
-        <bpmn:timeCycle xsi:type="bpmn:tFormalExpression">R/P1D</bpmn:timeCycle>
-      </bpmn:timerEventDefinition>
     </bpmn:startEvent>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -99,12 +93,9 @@
       <bpmndi:BPMNShape id="Event_1c5mm6k_di" bpmnElement="Event_1c5mm6k">
         <dc:Bounds x="842" y="202" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0xvvmht_di" bpmnElement="Activity_1w1cs7f">
+      <bpmndi:BPMNShape id="Activity_0xvvmht_di" bpmnElement="PR_DOCUM_UT_UPLOAD_DOC">
         <dc:Bounds x="320" y="180" width="100" height="80" />
         <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1u9kksx_di" bpmnElement="Activity_0elnwl1">
-        <dc:Bounds x="560" y="180" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0yzsdid_di" bpmnElement="Gateway_0yzsdid" isMarkerVisible="true">
         <dc:Bounds x="693" y="195" width="50" height="50" />
@@ -115,14 +106,14 @@
           <dc:Bounds x="450" y="165" width="61" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0knb1cf_di" bpmnElement="Activity_00i4c6q">
+      <bpmndi:BPMNShape id="Activity_0knb1cf_di" bpmnElement="PR_DOCU_PROC_ST_SAVE_DOC">
         <dc:Bounds x="560" y="390" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0jnxiul_di" bpmnElement="Activity_0jnxiul">
-        <dc:Bounds x="990" y="130" width="100" height="80" />
+      <bpmndi:BPMNShape id="Activity_1u9kksx_di" bpmnElement="Activity_0elnwl1">
+        <dc:Bounds x="560" y="180" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1cwdrkb_di" bpmnElement="Event_1jkvrql">
+      <bpmndi:BPMNShape id="Event_09bk97j_di" bpmnElement="Event_1jkvrql">
         <dc:Bounds x="242" y="202" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0laz7yg_di" bpmnElement="Flow_0laz7yg">

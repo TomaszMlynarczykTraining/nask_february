@@ -1,0 +1,29 @@
+{
+  "components": [
+    {
+      "text": "# Prosty formularz użytkownika",
+      "type": "text",
+      "id": "Field_0a1r35s"
+    },
+    {
+      "label": "Czy dokument jest poprawny?",
+      "type": "number",
+      "id": "Field_1j6s0bu",
+      "key": "isDocumentValid",
+      "validate": {
+        "required": true,
+        "min": -1,
+        "max": 1
+      }
+    }
+  ],
+  "type": "default",
+  "id": "PR_DOC_UPLOAD_FORM1",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.8.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}
