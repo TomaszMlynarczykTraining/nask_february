@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0zd5f3e" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.8.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <bpmn:process id="Event_subprocess" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0727wwk</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_1xzuh0b">
+      <bpmn:incoming>Flow_041mefb</bpmn:incoming>
+      <bpmn:incoming>Flow_12sr0q7</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:subProcess id="Activity_0bp1yt0" triggeredByEvent="true">
+      <bpmn:sequenceFlow id="Flow_1crww1t" sourceRef="Event_1j67pm0" targetRef="Activity_0q5vqn0" />
+      <bpmn:userTask id="Activity_0q5vqn0" name="Remind user of action">
+        <bpmn:incoming>Flow_1crww1t</bpmn:incoming>
+        <bpmn:outgoing>Flow_1k5ezub</bpmn:outgoing>
+      </bpmn:userTask>
+      <bpmn:endEvent id="Event_1ks7gpk">
+        <bpmn:incoming>Flow_1k5ezub</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:sequenceFlow id="Flow_1k5ezub" sourceRef="Activity_0q5vqn0" targetRef="Event_1ks7gpk" />
+      <bpmn:startEvent id="Event_1j67pm0" isInterrupting="false">
+        <bpmn:outgoing>Flow_1crww1t</bpmn:outgoing>
+        <bpmn:timerEventDefinition id="TimerEventDefinition_176n45b">
+          <bpmn:timeCycle xsi:type="bpmn:tFormalExpression">R5/PT10S</bpmn:timeCycle>
+        </bpmn:timerEventDefinition>
+      </bpmn:startEvent>
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="Flow_0727wwk" sourceRef="StartEvent_1" targetRef="Activity_06c75r4" />
+    <bpmn:sequenceFlow id="Flow_041mefb" sourceRef="Activity_06c75r4" targetRef="Event_1xzuh0b" />
+    <bpmn:userTask id="Activity_06c75r4" name="Some user task">
+      <bpmn:incoming>Flow_0727wwk</bpmn:incoming>
+      <bpmn:outgoing>Flow_041mefb</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:boundaryEvent id="Event_1bwk9mz" cancelActivity="false" attachedToRef="Activity_06c75r4">
+      <bpmn:outgoing>Flow_0s22pz3</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_1il49ft" />
+    </bpmn:boundaryEvent>
+    <bpmn:sequenceFlow id="Flow_0s22pz3" sourceRef="Event_1bwk9mz" targetRef="Activity_175lt77" />
+    <bpmn:userTask id="Activity_175lt77" name="Remind user of action">
+      <bpmn:incoming>Flow_0s22pz3</bpmn:incoming>
+      <bpmn:outgoing>Flow_12sr0q7</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_12sr0q7" sourceRef="Activity_175lt77" targetRef="Event_1xzuh0b" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Event_subprocess">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0f3hd03_di" bpmnElement="Activity_06c75r4">
+        <dc:Bounds x="290" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0pn483x_di" bpmnElement="Activity_175lt77">
+        <dc:Bounds x="460" y="200" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1xzuh0b_di" bpmnElement="Event_1xzuh0b">
+        <dc:Bounds x="642" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1uxguta_di" bpmnElement="Activity_0bp1yt0" isExpanded="true">
+        <dc:Bounds x="130" y="340" width="460" height="230" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_19a6rof_di" bpmnElement="Activity_0q5vqn0">
+        <dc:Bounds x="280" y="420" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ks7gpk_di" bpmnElement="Event_1ks7gpk">
+        <dc:Bounds x="472" y="442" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0mumn41_di" bpmnElement="Event_1j67pm0">
+        <dc:Bounds x="170" y="442" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1crww1t_di" bpmnElement="Flow_1crww1t">
+        <di:waypoint x="206" y="460" />
+        <di:waypoint x="280" y="460" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1k5ezub_di" bpmnElement="Flow_1k5ezub">
+        <di:waypoint x="380" y="460" />
+        <di:waypoint x="472" y="460" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_0o6nrh1_di" bpmnElement="Event_1bwk9mz">
+        <dc:Bounds x="372" y="142" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0727wwk_di" bpmnElement="Flow_0727wwk">
+        <di:waypoint x="215" y="120" />
+        <di:waypoint x="290" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_041mefb_di" bpmnElement="Flow_041mefb">
+        <di:waypoint x="390" y="120" />
+        <di:waypoint x="642" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0s22pz3_di" bpmnElement="Flow_0s22pz3">
+        <di:waypoint x="390" y="178" />
+        <di:waypoint x="390" y="240" />
+        <di:waypoint x="460" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12sr0q7_di" bpmnElement="Flow_12sr0q7">
+        <di:waypoint x="560" y="240" />
+        <di:waypoint x="601" y="240" />
+        <di:waypoint x="601" y="120" />
+        <di:waypoint x="642" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
