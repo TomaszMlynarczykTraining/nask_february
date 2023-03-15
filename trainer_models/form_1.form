@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "label": "Text Field",
+      "type": "textfield",
+      "id": "Field_08550lj",
+      "key": "field_18fckxr"
+    }
+  ],
+  "type": "default",
+  "id": "Form_0eoj523"
+}

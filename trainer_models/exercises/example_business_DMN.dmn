@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_10h3qlj" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.8.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <decision id="Status_Decision_DMN" name="Decision 1">
+    <decisionTable id="DecisionTable_1yic7e6" hitPolicy="FIRST">
+      <input id="Input_1" camunda:inputVariable="amount">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text>amount</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0a5zb0d" camunda:inputVariable="country">
+        <inputExpression id="LiteralExpression_0tn8nwb" typeRef="string">
+          <text>country</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" name="status" typeRef="string" />
+      <rule id="DecisionRule_0pzm8kk">
+        <inputEntry id="UnaryTests_1ft6jek">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_015epag">
+          <text>not("PL")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16tszfd">
+          <text>"NIEAKTYWNE"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0uamn2m">
+        <inputEntry id="UnaryTests_10nihbe">
+          <text>&gt;2000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rssb8q">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ehwxt7">
+          <text>"PRZYJĘTE"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1i79d2c">
+        <inputEntry id="UnaryTests_0re424x">
+          <text>&lt;2000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xxki0k">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0rhcyhq">
+          <text>"ZARCHIWIZOWANE"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Status_Decision_DMN">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
