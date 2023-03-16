@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" id="Definitions_00226zl" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.8.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <decision id="decyzja-zatr" name="decyzja-zatr">
+    <decisionTable id="DecisionTable_12anva6">
+      <input id="Input_1" label="placa" camunda:inputVariable="placa">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0gbqxrt" label="czy-byl" biodi:width="192" camunda:inputVariable="czy-byl">
+        <inputExpression id="LiteralExpression_18pvcve" typeRef="boolean">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="decyzja" typeRef="string" />
+      <rule id="DecisionRule_0a3lot0">
+        <inputEntry id="UnaryTests_136xj8o">
+          <text>&gt;20000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15agmd0">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0v60ee3">
+          <text>"Odrzucone"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_04hxao2">
+        <inputEntry id="UnaryTests_1638kl2">
+          <text>&gt;20000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pejrjq">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1em1ccw">
+          <text>"Odrzucone"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12a7wuo">
+        <inputEntry id="UnaryTests_1tdy7p5">
+          <text>&lt;=20000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gmkzyj">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_19qz2bi">
+          <text>"Odrzucone"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fe4j44">
+        <inputEntry id="UnaryTests_1n8i62c">
+          <text>&lt;=20000</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rel6p3">
+          <text>false</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dfvc6c">
+          <text>"Zaakceptowane"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="decyzja-zatr">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

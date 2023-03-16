@@ -1,0 +1,24 @@
+{
+  "components": [
+    {
+      "text": "Formularz użytkownika",
+      "type": "text",
+      "id": "Field_0y5xyz0"
+    },
+    {
+      "label": "Czy dokument jes poprawny",
+      "type": "number",
+      "id": "Field_04jjm3t",
+      "key": "isRozmowaKwalifikacyjna"
+    }
+  ],
+  "type": "default",
+  "id": "PR_Zatrudninie-01",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.8.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}

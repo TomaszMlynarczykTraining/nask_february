@@ -1,0 +1,30 @@
+{
+  "components": [
+    {
+      "text": "Formularz ",
+      "type": "text",
+      "id": "Field_0m3xj7i"
+    },
+    {
+      "label": "Płaca wartość",
+      "type": "number",
+      "id": "Field_138ferv",
+      "key": "placa"
+    },
+    {
+      "label": "Czy był na rozmowie",
+      "type": "checkbox",
+      "id": "Field_1fhgs8c",
+      "key": "czy-byl"
+    }
+  ],
+  "type": "default",
+  "id": "PR_Form_wnios",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.8.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}
