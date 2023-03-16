@@ -1,0 +1,37 @@
+{
+  "components": [
+    {
+      "label": "Data",
+      "type": "textfield",
+      "id": "Field_0ld9bki",
+      "key": "field_15vde34"
+    },
+    {
+      "label": "Imie Nazwisko",
+      "type": "textfield",
+      "id": "Field_1mweff5",
+      "key": "field_1jhvw1g"
+    },
+    {
+      "label": "Numer akt",
+      "type": "number",
+      "id": "Field_1k6899i",
+      "key": "field_0w4t5gi"
+    },
+    {
+      "label": "Powód",
+      "type": "textfield",
+      "id": "Field_0e2gc8d",
+      "key": "field_0uuer3p"
+    }
+  ],
+  "type": "default",
+  "id": "AKTA",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.8.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}
