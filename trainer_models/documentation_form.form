@@ -21,6 +21,22 @@
       "type": "textfield",
       "id": "Field_0cnjmgw",
       "key": "field_12da4bt"
+    },
+    {
+      "values": [
+        {
+          "label": "Value",
+          "value": "value"
+        },
+        {
+          "label": "Value 2",
+          "value": "value2"
+        }
+      ],
+      "label": "Checklist",
+      "type": "checklist",
+      "id": "Field_1vlsftj",
+      "key": "list"
     }
   ],
   "type": "default",
