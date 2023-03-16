@@ -1,0 +1,63 @@
+{
+  "components": [
+    {
+      "values": [
+        {
+          "label": "SALA PIERWSZA",
+          "value": "SALA1"
+        },
+        {
+          "label": "SALA DRUGA",
+          "value": "SALA2"
+        }
+      ],
+      "label": "WYBIERZ SALĘ",
+      "type": "select",
+      "id": "Field_0sn5hn4",
+      "key": "field_1l03cwp",
+      "searchable": false,
+      "defaultValue": "SALA1",
+      "properties": {},
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "DATA OD",
+      "type": "textfield",
+      "id": "Field_0vb3ruy",
+      "key": "field_1g5i82p",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "DATA DO",
+      "type": "textfield",
+      "id": "Field_0bxt6xb",
+      "key": "field_08o70y4",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "LICZBA OSÓB",
+      "type": "number",
+      "id": "Field_1u4hpzl",
+      "key": "field_0gw4f8a",
+      "validate": {
+        "required": true,
+        "min": 1
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_REZERWACJA",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.8.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}
