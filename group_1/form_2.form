@@ -1,0 +1,41 @@
+{
+  "components": [
+    {
+      "text": "Czy wniosek w godzinach nadliczbowych",
+      "type": "text",
+      "id": "Field_1pwy780"
+    },
+    {
+      "label": "liczba godzin",
+      "type": "number",
+      "id": "Field_1f2lnuw",
+      "key": "ileGodzin",
+      "defaultValue": 1,
+      "validate": {
+        "required": true,
+        "max": 30,
+        "min": 1
+      }
+    },
+    {
+      "label": "dzień miesiąca",
+      "type": "number",
+      "id": "Field_06vvli5",
+      "key": "dzien",
+      "validate": {
+        "required": true,
+        "max": 31,
+        "min": 1
+      }
+    }
+  ],
+  "type": "default",
+  "id": "Form_czyNadliczbowe",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.8.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.18.0",
+  "schemaVersion": 7
+}

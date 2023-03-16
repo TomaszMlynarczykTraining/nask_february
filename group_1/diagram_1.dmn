@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1qdqmsj" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.8.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <decision id="decisionmm" name="Decision 1">
+    <decisionTable id="DecisionTable_17wt6x9" hitPolicy="FIRST">
+      <input id="Input_1" label="ile godzin" camunda:inputVariable="ileGodzin">
+        <inputExpression id="InputExpression_1" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_05iuzt3" label="dzien miesiaca" camunda:inputVariable="dzien">
+        <inputExpression id="LiteralExpression_1rmyznp" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="wstepna akceptacja" name="czyNadliczbowe" typeRef="integer" />
+      <rule id="DecisionRule_0llam18">
+        <inputEntry id="UnaryTests_1vsxei6">
+          <text>&gt;30</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ohxl1e">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kbpiuo">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1447few">
+        <inputEntry id="UnaryTests_1walpzh">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0f3k6wh">
+          <text>&gt;29</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08a3dog">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1t7p8dg">
+        <inputEntry id="UnaryTests_1jniftl">
+          <text>&lt;=30</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rrvgsj">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17t501c">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="decisionmm">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
